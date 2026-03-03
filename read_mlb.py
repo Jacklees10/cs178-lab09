@@ -44,8 +44,7 @@ def print_all_players():
 
 def main():
     print("===== Reading from DynamoDB =====\n")
-    print_all_()
-
+    print_all_players
 
 if __name__ == "__main__":
     main()
