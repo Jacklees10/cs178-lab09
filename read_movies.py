@@ -24,8 +24,8 @@ def print_movie(movie):
     year = movie.get("Year", "Unknown Year")
     
     # Ratings is a nested map in the table — handle it gracefully
-    ratings = movie.get("Ratings", {})
-    rating_str = ", ".join(f"{k}: {v}" for k, v in ratings.items()) if ratings else "No ratings"
+    ratings = movie.get("Ratings", "No ratings")
+    # rating_str = ", ".join(f"{k}: {v}" for k, v in ratings.items()) if ratings else "No ratings"
     
     print(f"  Title : {title}")
     print(f"  Year  : {year}")
