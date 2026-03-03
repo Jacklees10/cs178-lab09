@@ -29,7 +29,7 @@ def print_movie(movie):
     
     print(f"  Title : {title}")
     print(f"  Year  : {year}")
-    print(f"  Ratings: {rating_str}")
+    print(f"  Ratings: {ratings}")
     print()
 
 
