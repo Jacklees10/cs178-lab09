@@ -12,8 +12,9 @@ def get_table():
 
 def print_movie(player):
     """Print a single movie's details in a readable format."""
-    name = player.get("Name", "Unknown Name")
-    hr = player.get("HRs:", "Unknown HRs")
+    # To match your table exactly
+    hr = player.get("HR", "Unknown HRs")
+    rbi = player.get("RBI", "Unknown RBIs")
     
     # Ratings is a nested map in the table — handle it gracefully
     rbi = player.get("RBIs:", "Unknown RBIs")
