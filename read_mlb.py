@@ -12,12 +12,9 @@ def get_table():
 
 def print_movie(player):
     """Print a single movie's details in a readable format."""
-    # To match your table exactly
+    name = player.get("Name", "Unknown Name")
     hr = player.get("HR", "Unknown HRs")
     rbi = player.get("RBI", "Unknown RBIs")
-    
-    # Ratings is a nested map in the table — handle it gracefully
-    rbi = player.get("RBIs:", "Unknown RBIs")
     # rating_str = ", ".join(f"{k}: {v}" for k, v in ratings.items()) if ratings else "No ratings"
 
     print(f"  Name : {name}")
@@ -47,7 +44,7 @@ def print_all_players():
 
 def main():
     print("===== Reading from DynamoDB =====\n")
-    print_all_players()
+    print_all_()
 
 
 if __name__ == "__main__":
