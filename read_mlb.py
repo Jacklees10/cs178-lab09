@@ -8,7 +8,7 @@ def get_table():
     dynamodb = boto3.resource("dynamodb", region_name=REGION)
     return dynamodb.Table(TABLE_NAME)
 
-def print_movie(player):
+def print_player(player):
     name = player.get("Name", "Unknown Name")
     hr = player.get("HR", "Unknown HRs")
     rbi = player.get("RBI", "Unknown RBIs")
@@ -25,7 +25,7 @@ def print_all_players():
         return
     print(f"Found {len(items)} player(s):\n")
     for player in items:
-        print_movie(player)
+        print_player(player)
 
 def main():
     print("===== Reading from DynamoDB =====\n")
