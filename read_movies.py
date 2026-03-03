@@ -33,6 +33,24 @@ def print_movie(movie):
     print(f"  Ratings: {ratings}")
     print(f"  Genre  : {genre}")
 
+def get_movie_by_title():
+        
+        table = get_table()
+        
+        title_input = input("Enter a movie title: ").strip()
+    
+        response = table.scan(
+            FilterExpression=boto3.dynamodb.conditions.Attr("Title").eq(title_input)
+        )
+    
+        items = response.get("Items", [])
+    
+        if not items:
+            print(f"Movie '{title_input}' not found.")
+        else:
+         for movie in items:
+            print_movie(movie)
+
 
 def print_all_movies():
     """Scan the entire Movies table and print each item."""
